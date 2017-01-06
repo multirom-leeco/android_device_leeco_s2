@@ -1,4 +1,4 @@
-# TWRP Tree for LeEco Le 2 (s2)
+# MultiRom TWRP Tree for LeEco Le 2 (s2)
 ==============
 
 The LeEco Le 2 (s2) is a smartphone from LeEco or LeMobile Information Technology Co. Ltd.
@@ -24,20 +24,25 @@ Release Date | June 2016
 
 To initialize your local repository using the OMNIROM trees to build TWRP, use a command like this:
 
-        $ repo init -u git://github.com/omnirom/android.git -b android-7.1
+	$ repo init -u git://github.com/omnirom/android.git -b android-6.0
+
+Initialize MultiRom trees:
+
+	$ mkdir .repo/local_manifests; curl https://raw.githubusercontent.com/multirom-s2/local_manifests/master/s2.xml > .repo/local_manifests/s2.xml
 
 Then to sync up:
 
-        $ repo sync
+	$ repo sync
 
-Download s2 TWRP Trees:
+Full Compilation:
 
-        $ git clone https://github.com/s2-devs/android_twrp_leeco_s2.git device/leeco/s2 -b omni-twrp
-        
-Full Compilation
-        
-        $ source build/envsetup.sh
+	$ source build/envsetup.sh
 
-        $ lunch omni_s2-userdebug
+	$ lunch omni_s2-userdebug
         
-        $ make clean && make recoveryimage
+	$ make clean && make recoveryimage
+		
+	$ make multirom_zip
+
+	$ make multirom_uninstaller
+
