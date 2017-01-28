@@ -103,7 +103,9 @@ MR_CONTINUOUS_FB_UPDATE := true
 MR_INIT_DEVICES := device/leeco/s2/multirom/mr_init_devices.c
 MR_DPI := xhdpi
 # MR_DPI_MUL := 2.0
-# MR_DPI_FONT := 401
+MR_DPI_FONT := 340
+MR_USE_MROM_FSTAB := true
+MR_FSTAB := device/leeco/s2/multirom/mrom.fstab
 MR_KEXEC_MEM_MIN := 0x84A00000
 MR_KEXEC_DTB := true
 MR_DEVICE_HOOKS := device/leeco/s2/multirom/mr_hooks.c
@@ -117,7 +119,7 @@ MR_QCOM_OVERLAY_HEADER := device/leeco/s2/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
 MR_DEV_BLOCK_BOOTDEVICE := true
 MR_POPULATE_BY_NAME_PATH := "/dev/block/platform/soc.0/7824900.sdhci/by-name"
-
+DEVICE_RESOLUTION := 1080x1920
 
 # Set MultiRom Recovery Version
 include device/leeco/s2/MR_REC_VERSION.mk
