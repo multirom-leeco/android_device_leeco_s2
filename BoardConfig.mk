@@ -42,7 +42,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # TARGET_HW_DISK_ENCRYPTION := true
 
 # Kernel 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -82,7 +82,7 @@ BOARD_HAS_NO_REAL_SDCARD := true
 TW_THEME := portrait_hdpi
 DEVICE_RESOLUTION := 1080x1920
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-# BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
@@ -102,14 +102,13 @@ MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
 MR_CONTINUOUS_FB_UPDATE := true
 MR_INIT_DEVICES := device/leeco/s2/multirom/mr_init_devices.c
 MR_DPI := xhdpi
-# MR_DPI_MUL := 2.0
-MR_DPI_FONT := 340
+MR_DPI_MUL := 2.0
+MR_DPI_FONT := 401
 MR_USE_MROM_FSTAB := true
 MR_FSTAB := device/leeco/s2/multirom/mrom.fstab
 MR_KEXEC_MEM_MIN := 0x84A00000
-MR_KEXEC_DTB := true
 MR_DEVICE_HOOKS := device/leeco/s2/multirom/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 4
+MR_DEVICE_HOOKS_VER := 6
 MR_PIXEL_FORMAT := "RGBA_8888"
 MR_ENCRYPTION := true
 MR_ENCRYPTION_SETUP_SCRIPT := device/leeco/s2/multirom/mr_cp_crypto.sh

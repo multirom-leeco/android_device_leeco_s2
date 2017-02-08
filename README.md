@@ -40,7 +40,9 @@ Full Compilation:
 
 	$ lunch omni_s2-userdebug
         
-	$ make clean && make recoveryimage
+	$ make clean
+
+	$ make recoveryimage
 		
 	$ make multirom_zip
 
