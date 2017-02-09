@@ -25,9 +25,6 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
-PRODUCT_COPY_FILES += \
-    device/leeco/s2/kernel:kernel
-
 PRODUCT_NAME := omni_s2
 PRODUCT_DEVICE := s2
 PRODUCT_BRAND := LeEco
