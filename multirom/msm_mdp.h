@@ -1168,4 +1168,4 @@ enum {
 	MDP_CSC_ITU_R_601_FR,
 	MDP_CSC_ITU_R_709,
 };
-#endif /*_UAPI_MSM_MDP_H_*/ 
+#endif /*_UAPI_MSM_MDP_H_*/

@@ -22,7 +22,7 @@
 #include <util.h>
 #include <multirom.h>
 
-#define GATEKEEPER_PATH "/system/lib64/hw/gatekeeper.angler.so"
+#define GATEKEEPER_PATH "/system/lib64/libgatekeeper.so"
 #define GATEKEEPER_DATA_DIR "/data/misc/gatekeeper"
 #define GATEKEEPER_COLDBOOT_PATH "/data/misc/gatekeeper/.coldboot"
 
@@ -125,8 +125,8 @@ void tramp_hook_encryption_setup(void)
     // start qseecomd
     char* cmd[] = {"/mrom_enc/qseecomd", NULL};
     char* env[] = {"LD_LIBRARY_PATH=/mrom_enc", NULL};
-    // setup links and permissions based on TWRP's init.recovery.angler.rc
-    symlink("/dev/block/platform/soc.0/f9824900.sdhci", "/dev/block/bootdevice");
+    // setup links and permissions based on TWRP's init.recovery.s2.rc
+    symlink("/dev/block/platform/soc.0/7824900.sdhci", "/dev/block/bootdevice");
     chmod("/dev/qseecom", 0660);
     chown("/dev/qseecom", AID_SYSTEM, AID_DRMRPC);
     chown("/dev/ion", AID_SYSTEM, AID_SYSTEM);
