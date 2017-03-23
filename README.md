@@ -1,3 +1,5 @@
+Copyright (C) 2017 Rishabh Rao
+
 # MultiRom TWRP Tree for LeEco Le 2 (s2)
 
 The LeEco Le 2 (s2) is a smartphone from LeEco or LeMobile Information Technology Co. Ltd.

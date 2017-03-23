@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2017 The Android Open Source Project
+# Copyright (C) 2017 Rishabh Rao
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +13,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-# Made By rishabhrao
 
 # OTA Assert
 TARGET_OTA_ASSERT_DEVICE := s2,le_s2,le_ww_s2,le_s2_ww,le_s2_na,x526,s3,s2_na
