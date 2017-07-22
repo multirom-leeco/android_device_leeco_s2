@@ -38,6 +38,8 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_USES_64_BIT_BINDER := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
@@ -66,7 +68,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 57033579520
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/leeco/s2/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/leeco/s2/recovery/root/etc/recovery.fstab
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -75,8 +77,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_USES_ION := true
 
-# Encryption
+# Full Disk Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # TWRP
 DEVICE_RESOLUTION := 1080x1920
@@ -94,6 +97,8 @@ TW_NEW_ION_HEAP := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_CRYPTO := true
+TARGET_RECOVERY_DEVICE_MODULES := libbinder libgui libui libEGL libGLESv2 libprotobuf-cpp-lite libsync
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libbinder.so $(OUT)/system/lib64/libgui.so $(OUT)/system/lib64/libui.so $(OUT)/system/lib64/libEGL.so $(OUT)/system/lib64/libGLESv2.so $(OUT)/system/lib64/libprotobuf-cpp-lite.so $(OUT)/system/lib64/libsync.so
 TW_UNMOUNT_FIRMWARE_ON_BOOT := true
 
 # MultiRom
@@ -106,7 +111,7 @@ MR_INIT_DEVICES := device/leeco/s2/multirom/mr_init_devices.c
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_USE_MROM_FSTAB := true
-MR_FSTAB := device/leeco/s2/recovery.fstab
+MR_FSTAB := device/leeco/s2/recovery/root/etc/recovery.fstab
 MR_KEXEC_MEM_MIN := 0x0
 MR_DEVICE_HOOKS := device/leeco/s2/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
